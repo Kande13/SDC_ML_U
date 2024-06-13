@@ -2,9 +2,9 @@ import sys
 from time import time
 import os
 
-
-tools_path = f"{os.path.dirname(__file__)}/tools_mk"
+tools_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../tools_mk/'))
 sys.path.append(tools_path)
+print(sys.path)
 
 from emails_Process_mk import preprocess_mk
 
