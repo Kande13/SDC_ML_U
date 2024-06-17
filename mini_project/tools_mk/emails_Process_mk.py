@@ -29,7 +29,7 @@ def preprocess_mk():
     features_test_transformed = vectorizer.transform(features_test)
 
     # Sélectionner les caractéristiques les plus importantes
-    selector = SelectPercentile(f_classif, percentile=10)
+    selector = SelectPercentile(f_classif, percentile=1)
     selector.fit(features_train_transformed, labels_train)
     features_train_transformed = selector.transform(features_train_transformed).toarray()
     features_test_transformed = selector.transform(features_test_transformed).toarray()
